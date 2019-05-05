@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .demo {
+            background-color: pink;
+        }
+        #hz .show {
+            display: block;
+        }
+        #hz div {
+            width: 500px;
+            display: none;
+            height: 500px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="btn">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+        </div>
+        <div id="hz">
+            <div class="show">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+    </div>
+</body>
+<script>
+    // 入口函数
+    // 页面的结构、样式、节点加载完毕后，执行里面的js部分
+    window.onload = function () {
+        // 获取button元素
+        var btn = document.getElementById("btn").getElementsByTagName("button");
+        // 获取隐藏的div盒子元素
+        var divs = document.getElementById("hz").getElementsByTagName("div");
+        // 第一遍循环button元素
+        for (var i = 0; i < btn.length; i++) {
+            // 记录每个btn的位置
+            btn[i].index = i;
+            // 当鼠标点击的时候，执行
+            btn[i].onclick = function () {
+                // 第二遍循环button元素
+                for (var j = 0; j < btn.length; j++) {
+                    // 将每个button的class清空
+                    btn[j].className = "";
+                    // 将每个div的class清空
+                    divs[j].className = "";
+                }
+                // 留下鼠标点击的当前元素，并添加class
+                this.className = "demo";
+                // 留下鼠标点击的当前索引号的class
+                divs[this.index].className = "show";
+            }
+        }
+    }
+</script>
+
+</html>
