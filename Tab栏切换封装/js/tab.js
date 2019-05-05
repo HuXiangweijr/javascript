@@ -1,5 +1,8 @@
 // window.onload = function () {
     // Tab栏封装
+    // 第一个参数 父级
+    // 第二个参数 要改变的标题的class
+    // 第三个参数 要改变的内容的class
     function Tab(obj, title, content) {
         // 获取父级id
         var target = document.getElementById(obj);
