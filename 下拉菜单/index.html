@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="sel">
+        <option value="1">春天</option>
+        <option value="2">夏天</option>
+        <option value="3">秋天</option>
+        <option value="4">冬天</option>
+    </select>
+    <p id="siji"></p>
+</body>
+<script>
+    window.onload = function(){
+        var sel = document.getElementById("sel");
+        var siji = document.getElementById("siji");
+        sel.onchange = function(){
+            switch(this.value){
+                case "1":
+                    siji.innerHTML = "春天来了";
+                    break;
+                case "2":
+                    siji.innerHTML = "夏天来了";
+                    break;
+                case "3":
+                    siji.innerHTML = "秋天来了";
+                    break;
+                case "4":
+                    siji.innerHTML = "冬天来了";
+                    break;
+            }
+        }
+    }
+</script>
+</html>
