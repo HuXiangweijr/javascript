@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txt"><button id="btn">查询价格</button>
+    <p id="money"></p>
+</body>
+<script>
+    window.onload = function(){
+        var txt = document.getElementById("txt");
+        var btn = document.getElementById("btn");
+        var money = document.getElementById("money");
+        btn.onclick = function(){
+            var mon = txt.value;
+            switch(mon){
+                case "苹果":
+                    money.innerHTML = "苹果的价格是：5元";
+                    break;
+                case "香蕉":
+                    money.innerHTML = "香蕉的价格是：2元";
+                    break;
+                case "梨":
+                    money.innerHTML = "梨的价格是: 1.5元";
+                    break;
+                case "大白菜":
+                    money.innerHTML = "大白菜的价格是：9毛";
+                    break;
+                default:
+                    money.innerHTML = "没有这个水果";
+            }
+        }
+    }
+</script>
+
+</html>
