@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div class="demo"></div>
+    <div></div>
+    <div class="demo text test"></div>
+    <div></div>
+    <div class="demo test "></div>
+    <div></div>
+    <div class="demo de test"></div>
+</body>
+<script>
+    window.onload = function(){
+        // 封装自己的class类，用于老版本ie浏览器不支持document.getElementsByClassName，来用的
+        // 用来测试浏览器是否支持document.getElementsByClassName
+        function getClass(classname){document.getElementsByClassName
+            /* 
+                判断浏览器是否支持document.getElementsByClassName
+                如果支持，则return返回
+             */
+            if(document.getElementsByClassName){
+                return document.getElementsByClassName(classname);
+            }
+            // 命名数组，用于return值
+            var arr = [];
+            // 获取页面中所有的元素
+            var dom = document.getElementsByTagName("*");
+            // 循环所有的标签元素
+            for(var i = 0; i < dom.length; i++){
+                // 分割类名，并转换为数组
+                // 就是这样["demo","test"]
+                var txtarr = dom[i].className.split(" ");
+                // 遍历分割的类名
+                for(var j = 0; j < txtarr.length; j++){
+                    // 判断分割的class类名是否一样
+                    if(txtarr[j] == classname){
+                        // 用数组操作方法，把类名放到数组中
+                        arr.push(dom[i]);
+                    }
+                }
+            }
+            // 返回数组的值
+            return arr;
+        }
+        console.log(getClass("test").length);
+        var test = getClass("test");
+        for(var i = 0; i < test.length; i++){
+            test[i].style.backgroundColor = "red";
+        }
+    }
+</script>
+</html>
