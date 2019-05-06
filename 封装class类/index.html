@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="demo"></div>
+    <div></div>
+    <div class="demo"></div>
+    <div></div>
+    <div class="demo"></div>
+    <div></div>
+    <div class="demo"></div>
+    <div></div>
+</body>
+<script>
+    window.onload = function () {
+        // 封装自己的class类
+        // 用来测试浏览器是否支持document.getElementsByClassName
+        function getClass(classname){
+            /* 
+                判断浏览器是否支持document.getElementsByClassName
+                如果支持，则直接return
+            */
+            if(document.getElementsByClassName == classname){
+                return document.getElementsByClassName(classname);
+            }
+            // 命名数组
+            var arr = [];
+            // 获取页面中所有的标签元素
+            var dom = document.getElementsByTagName("*");
+            // 循环所有的标签元素
+            for(var i = 0; i < dom.length; i++){
+                /* 
+                    判断标签元素的class是否与classname相等
+                    如果相等，就把它放到数组里
+                */ 
+                if(dom[i].className == classname){
+                    arr.push(dom[i]);
+                }
+            }
+            // 并返回数组的值
+            return arr;
+        }
+        // 用控制台的console.log方法输出得到的className
+        console.log(getClass("demo").length);
+    }
+</script>
+
+</html>
