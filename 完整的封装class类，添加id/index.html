@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 0 20px 0 0;;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div class="demo"></div>
+    <div id="one">
+        <div class="demo text test"></div>
+        <div></div>
+        <div class="demo test "></div>
+        <div></div>
+    </div>
+    <div></div>
+    <div class="demo de test"></div>
+</body>
+<script>
+    window.onload = function(){
+        // 封装class类。
+        // 支持document.getElementsByClassName的 分为有id的和没有id的
+        // 不支持document.getElementsByClassName 分为有id的和没有id的
+        function getClass(classname, id){
+            // 支持document.getElementsByClassName的
+            if(document.getElementsByClassName){
+                // 有id的情况
+                if(id){
+                    // 如果有id就把id获取过来，并获取id里的class
+                    var eleId = document.getElementById(id);
+                    // 返回id里的class
+                    return eleId.getElementsByClassName(classname);
+                }else{
+                    // 没有id的情况
+                    // 如果没有id的，则直接返回页面中的class
+                    return document.getElementsByClassName(classname);
+                }
+            }
+            // 不支持的document.getElementsByClassName
+            // 分为有id和没有id的
+            if(id){
+                // 如果有id，就把id里的标签元素全部获取过来
+                var eleId = document.getElementById(id);
+                var dom = eleId.getElementsByTagName("*");
+            }else{
+                // 如果没有id就把页面中所有的标签元素获取过来
+                var dom = document.getElementsByTagName("*");
+            }
+            // 命名数组，用于返回值
+            var arr = []
+            // 循环拿到的元素或者class
+            // 分为有id的和没有id的
+            for(var i = 0; i < dom.length; i++){
+                // 将拿到的元素或者class拆分
+                var txtarr = dom[i].className.split(" ");
+                // 循环拆分的元素
+                for(var j = 0; j < txtarr.length; j++){
+                    // 判断拆分的元素中，class名称是否一样
+                    if(txtarr[j] == classname){
+                        // 如果一样，就用数组操作方法，将数组推入到末尾，并返回新的长度
+                        arr.push[dom[i]];
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(getClass("test").length);
+        var aa = getClass("test");
+        for(var i = 0; i < aa.length; i++){
+            aa[i].style.backgroundColor = "pink"
+        }
+    }
+</script>
+</html>
