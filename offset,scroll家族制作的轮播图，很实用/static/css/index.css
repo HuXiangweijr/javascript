@@ -1,0 +1,66 @@
+
+/*无风轮播改良的css*/
+#demo_e {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-width: 5px;
+    border-color: rgb(242, 242, 242);
+    border-style: solid;
+}
+#indemo_2 {
+    float: left;
+    width: 800%;
+}
+#demo2_3,#demo2_2 {
+    float: left;
+}
+.recommended .jptj .jp-tj {
+    float: left;
+    padding: 65px 17px 65px 17px;
+    border-width: 5px;
+    border-right-style: solid;
+    border-color: rgb(242, 242, 242);
+    background-image: -moz-linear-gradient( 0deg, rgb(209,0,1) 0%, rgb(242,242,242) 50%, rgb(209,0,1) 100%);
+    background-image: -webkit-linear-gradient( 0deg, rgb(209,0,1) 0%, rgb(242,242,242) 50%, rgb(209,0,1) 100%);
+    background-image: -ms-linear-gradient( 0deg, rgb(209,0,1) 0%, rgb(242,242,242) 50%, rgb(209,0,1) 100%);
+}
+.recommended .jptj .jp-tj p {
+    font-size: 26px;
+    color: rgb(209, 0, 1);
+    font-weight: bold;
+}
+.recommended .jptj .jp-lb {
+    margin: 15px 0 0 0px;
+}
+.recommended .jptj .jp-lb ul li {
+    margin: 0 10px 0 0;
+    width: 240px;
+    float: left;
+}
+.recommended .jptj .jp-lb ul li a {
+    display: inline-block;
+}
+.recommended .jptj .jp-lb ul li a:hover {
+    text-decoration: none;
+}
+.recommended .jptj .jp-lb ul li .jp-img {
+    font-size: 0px;
+    overflow: hidden;
+}
+.recommended .jptj .jp-lb ul li .jp-img img {
+    width: 240px;
+    height: 180px;
+    margin:0px 0px -10px 0px;
+}
+.recommended .jptj .jp-lb ul li .jp-wenzi h3 {
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+    line-height: 45px;
+}
+.recommended .jptj .jp-lb ul li .jp-wenzi p {
+    font-size: 14px;
+    color: rgb(77, 77, 77);
+    line-height: 30px;
+}

@@ -1,0 +1,40 @@
+/*公共样式*/
+html, body, div, span, h1, h2, h3, h4, h5, h6, p,  a,  img,input,
+dl, dt, dd, ol, ul, li, tr, th, td ,textarea,input
+{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: "微软雅黑";
+    background-color: #ffffff;
+    color: rgb(76,76,76);
+    font-size: 16px;
+    min-width: 1200px;
+}
+ul, ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+img{
+    border:0px;
+}
+.clear{
+    clear: both;
+}
+.w{
+    width: 1200px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
