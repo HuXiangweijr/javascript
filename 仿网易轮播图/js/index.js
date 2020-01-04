@@ -1,3 +1,4 @@
+// 页面加载完毕后，开始执行
 window.onload = function () {
     function $(id) { return document.getElementById(id); }
     // 获取最大的盒子
@@ -17,6 +18,7 @@ window.onload = function () {
         span.className = "slider-ctrl-con";
         // 给生成的span添加序列号
         span.innerHTML = imgs.length - i;
+        // 将生成的span插入到两个按钮中间
         slider_ctrl.insertBefore(span, slider_ctrl.children[1]);
     }
 
@@ -43,17 +45,30 @@ window.onload = function () {
             } else if (this.className == "slider-ctrl-next") {
                 left();
             } else {
+                // 获取下面span的当前索引号
                 var that = this.innerHTML - 1;
+                // 判断span的方向，是后面的还是前面的，如果大于就是后面的，那么图片从后面出来
                 if (that > iNow) {
+                    // 图片缓缓从当前视觉框走向左边
                     animate(imgs[iNow], { left: -scrollWidth });
+                    // 当前图片跟着span一起出来
                     imgs[that].style.left = scrollWidth + "px";
+                    // 当前图片跟着span一起缓缓走到视觉框中
+                    animate(imgs[that], { left: 0});
+                // 判断span的方向，是后面的还是前面的，如果小于就是前面的，那么图片从前面出来
                 } else if (that < iNow) {
+                    // 图片缓缓从当前视觉框走向右边
                     animate(imgs[iNow], { left: scrollWidth });
+                    // 当前图片跟着span一起出来
                     imgs[that].style.left = -scrollWidth + "px";
+                    // 当前图片跟着span一起缓缓走到视觉框中
+                    animate(imgs[that], { left: 0});
                 }
+                // 当点击下方的span按钮时，不论图片走到哪一张，在点击后，都要回到当前那一张
                 iNow = that;
+                // 图片缓缓进入视觉框
                 animate(imgs[iNow], { left: 0 });
-                setSquare();
+                spanRight();
             }
         }
     }
@@ -97,7 +112,6 @@ window.onload = function () {
             spans[i].className = "slider-ctrl-con";
         }
         spans[iNow + 1].className = "slider-ctrl-con current";
-        console.log(spans[iNow - 1]);
     }
 
     // 鼠标经过，清楚定时器
